@@ -1,10 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>DELI-VERY</title>
-    </head>
-    <body>
-        <h1>Hello World!!!</h1>
-        <a href="/map" target="_blank">Open map in new window</a>.
-    </body>
+  <head>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!--<script src="https://vuejs.org/js/vue.js"></script>-->
+    <script src="js/offline_vue.js" defer></script>
+    <script src="js/menu.js" defer></script>
+    <script src="js/js_script.js" defer></script>
+    <script src="js/vue_script.js" defer></script>
+    <title>Burger Selector Alpha</title>
+    <meta charset="utf-8"/>
+  </head>
+  <body>
+    <main>
+      <section id="main">
+	<header id="mainheader">
+	  <h1 id="headline">Welcome to the Burger Selector, åäö version.</h1>
+	  <img id="bgpic" src="img/polacks.jpg" title="Background Picture">
+	</header>
+	<div id="burgerIDs">
+	  {{ arbitraryVariableName }}
+	  <ol>
+	    <li v-for="burger in burgers" v-if="burger.stock > 0">
+	      {{ burger.name }}
+	    </li>
+	  </ol>
+	</div>
+	<div class="wrapper">
+	  <h1>Select your burger!</h1><br>
+	  These are our current options.
+	  <div class="box a">
+	    Fire Burger<br>
+	    <img id="b1" src="img/burger1.jpg" alt="Fire Burger" title="Fire" width="130"><br>
+	    Made of fire<br>
+	    Will burn<br>
+	    Burns the impurities away<br>
+	    <input type="checkbox" id="cb0" name="cbox"><br>
+	  </div>
+	  <div class="box b">
+	    Water Burger<br>
+	    <img id="b2" src="img/burger2.png" alt="Water Burger" title="Water" width="100"><br>
+	    Made of water<br>
+	    Will douse fires<br>
+	    Washes the heathens away<br>
+	    <input type="checkbox" id="cb1" name="cbox"><br>
+	  </div>
+	  <div class="box c">
+	    Earth Burger<br>
+	    <img id="b3" src="img/burger3.jpg" alt="Earth Burger" title="Earth" width="150"><br>
+	    Made of earth<br>
+	    Ashes to ashes<br>
+	    Earth to earth<br>
+	    <input type="checkbox" id="cb2" name="cbox"><br>
+	  </div>
+	</div>
+      </section>
+      <section id="contact">
+	<h1>Customer Information</h1>
+	This is where you fill in your necessary information
+	<form id="contacts">
+	  <h3>Delivery Information:</h3>
+	  <p>
+	    <label for="fullname">Full name</label><br>
+	    <input type="text" id="fullname" name="fn" required="required" placeholder="First- and Last name">
+	  </p>
+	  <p>
+	    <label for="email">E-mail</label><br>
+	    <input type="email" id="email" name="em" required="required" placeholder="E-mail address">
+	  </p>
+	  <p>
+	    <label for="street">Street</label><br>
+	    <input type="text" id="street" name="st" placeholder="Street name">
+	  </p>
+	  <p>
+	    <label for="house">House</label><br>
+	    <input type="number" id="house" name="hs" min="1000" required="required" placeholder="House number">
+	  </p>
+	  <p>
+	    <label for="payment">Payment Options</label><br>
+	    <select id="payment" name="pay">
+	      <option>Master Card</option>
+	      <option>Visa</option>
+	      <option>Paypal </option>
+	      <option>Bitcoins</option>
+	      <option>Natura</option>
+	    </select>
+	  </p>
+	  <div id="rbuttons">
+	    <label for="radiobuttons">Gender</label><br>
+	    <input type="radio" id="rb0" name="rb">Male<br>
+	    <input type="radio" id="rb1" name="rb">Female<br>
+	    <input type="radio" id="rb2" name="rb" checked="checked">Minion<br>
+	    <input type="radio" id="rb3" name="rb">Other<br>
+	    <input type="radio" id="rb4" name="rb">Undisclosed<br>
+	  </div>
+	  <div id="submitButton">
+	    <button type="submit" id="buttn" v-on:click="markDone(), getInfo()"><img src="/img/image_button.png"></button>
+	    <div>
+	      Hej
+	    </div>
+	  </div>
+	</form>
+      </section>
+    </main>
+    <footer>
+      &copy; 2018 David Avetian & Son & Co Inc
+    </footer>
+  </body>
 </html>
